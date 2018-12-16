@@ -28,7 +28,8 @@ class MyCircularQueue:
             node.pre = self.tail.pre
             node.next = self.tail
             # the order must be self.tail.pre.next = node, then self.tail.pre = node
-            # according to the test so far, the assignment statement is executed from right to left
+            # the evaluation order can be learnt from: https://www.v2ex.com/amp/t/443384
+                # which is self.tail.pre.next = node, then self.tail.pre = self.tail.pre.next
             self.tail.pre.next = self.tail.pre = node
             self.curSize += 1
             return True
