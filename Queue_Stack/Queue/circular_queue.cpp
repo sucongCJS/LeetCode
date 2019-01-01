@@ -8,7 +8,7 @@ private:
     int head;
     int tail;
     int size;
-private:
+public:
     /** Initialize your data structure here. Set the size of the queue to be k. */
     MyCircularQueue(int k){
         data.resize(k);
@@ -69,13 +69,27 @@ private:
     }
 };
 
-/**
- * Your MyCircularQueue object will be instantiated and called as such:
- * MyCircularQueue obj = new MyCircularQueue(k);
- * bool param_1 = obj.enQueue(value);
- * bool param_2 = obj.deQueue();
- * int param_3 = obj.Front();
- * int param_4 = obj.Rear();
- * bool param_5 = obj.isEmpty();
- * bool param_6 = obj.isFull();
- */
+int main(){
+    MyCircularQueue q(3);
+    q.enQueue(1);
+    q.enQueue(3);
+    q.enQueue(13);
+    if (q.isFull()){
+        cout<<"full now"<<endl;
+    }
+    else{
+        cout<<"not full"<<endl;
+    }
+    if (!q.isEmpty()) {
+        cout<<q.Rear()<<endl;
+        cout<<q.Front()<<endl;
+    }
+    q.deQueue();
+    if (!q.isEmpty()) {
+        cout<<q.Front()<<endl;
+    }
+    q.deQueue();
+    if (!q.isEmpty()) {
+        cout<<q.Front()<<endl;
+    }
+}
